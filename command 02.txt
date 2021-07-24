@@ -1,0 +1,724 @@
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ touch ABCD/random.txt
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ABCD/random.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ABCD/random.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git rm ABCD/random.txt
+error: the following file has local modifications:
+    ABCD/random.txt
+(use --cached to keep the file, or -f to force removal)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git -f rm ABCD/random.txt
+unknown option: -f
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git -f rm ABCD/random.txt
+unknown option: -f
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git rm -f ABCD/random.txt
+rm 'ABCD/random.txt'
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    ABCD/random.txt
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git mv index.html home.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    ABCD/random.txt
+        renamed:    index.html -> home.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ mv index.html aboutme.html
+mv: cannot stat 'index.html': No such file or directory
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ mv about.html aboutme.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    ABCD/random.txt
+        renamed:    index.html -> home.html
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    about.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        aboutme.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add .
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    ABCD/random.txt
+        renamed:    about.html -> aboutme.html
+        renamed:    index.html -> home.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "Few changes"
+[master b113bf0] Few changes
+ 3 files changed, 1 deletion(-)
+ delete mode 100644 ABCD/random.txt
+ rename about.html => aboutme.html (100%)
+ rename index.html => home.html (100%)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git rm --cached ,DS_Store
+fatal: pathspec ',DS_Store' did not match any files
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ mkdir abc
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ touch abc/my.txt
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        abc/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add .
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc/my.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   abc/my.txt
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ touch contact.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc/my.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   abc/my.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        contact.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc/my.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   abc/my.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        contact.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add .
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc/my.txt
+        new file:   contact.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git restore --staged contact.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   abc/my.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        contact.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git restore --staged abc
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        abc/
+        contact.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add .
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "Add contact"
+[master fbb48c2] Add contact
+ 2 files changed, 19 insertions(+)
+ create mode 100644 abc/my.txt
+ create mode 100644 contact.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git log
+commit fbb48c2040e4ac4dbdf6abccde3d4881e43ccffe (HEAD -> master)
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:52:06 2021 +0530
+
+    Add contact
+
+commit b113bf056a63c30ce2c9a513a3349a55d187da1f
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:33:59 2021 +0530
+
+    Few changes
+
+commit 26274a89ed94fb82b443023b9036aa9bd85956b5
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:21:18 2021 +0530
+
+    ABCD folder
+
+commit a74bff68a5abf96dcdbaf9b53baad8581dd935d7
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:15:17 2021 +0530
+
+    Added gitignore file
+
+commit 0020f118010d4cffb319f4168bf4993bdc72da98
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 06:40:37 2021 +0530
+
+    Apdating index.html
+
+commit 85b90d5b4538e5abaeaf803ba3286fe8b33952fe
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Mon Jul 19 09:39:35 2021 +0530
+
+    changed about.html
+
+commit 809beb053bd07fbde40368b5f1b2e54372e86adc
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Mon Jul 19 09:32:23 2021 +0530
+
+    Added subheading in index.html
+
+commit 90cbec4b4255e92af4527814cb5a2f4e70798f5e
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Mon Jul 19 09:27:14 2021 +0530
+
+    Added About Me
+
+commit 513e3e9774f8653da7cda75268e2dd54730807ed
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Mon Jul 19 09:10:44 2021 +0530
+
+    Add index.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git checkout --contact.html
+error: unknown option `contact.html'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git checkout -- contact.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git checkout --contact.html
+error: unknown option `contact.html'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --guess               second guess 'git checkout <no-such-branch>' (default)
+    --overlay             use overlay mode (default)
+    -q, --quiet           suppress progress reporting
+    --recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --progress            force progress reporting
+    -m, --merge           perform a 3-way merge with the new branch
+    --conflict <style>    conflict style (merge or diff3)
+    -d, --detach          detach HEAD at named commit
+    -t, --track           set upstream info for new branch
+    -f, --force           force checkout (throw away local modifications)
+    --orphan <new-branch>
+                          new unparented branch
+    --overwrite-ignore    update ignored files (default)
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git checkout -- contact.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git checkout -- contact.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git log
+commit fbb48c2040e4ac4dbdf6abccde3d4881e43ccffe (HEAD -> master)
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:52:06 2021 +0530
+
+    Add contact
+
+commit b113bf056a63c30ce2c9a513a3349a55d187da1f
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:33:59 2021 +0530
+
+    Few changes
+
+commit 26274a89ed94fb82b443023b9036aa9bd85956b5
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:21:18 2021 +0530
+
+    ABCD folder
+
+commit a74bff68a5abf96dcdbaf9b53baad8581dd935d7
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:15:17 2021 +0530
+
+    Added gitignore file
+
+commit 0020f118010d4cffb319f4168bf4993bdc72da98
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 06:40:37 2021 +0530
+
+    Apdating index.html
+
+commit 85b90d5b4538e5abaeaf803ba3286fe8b33952fe
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git checkout -f
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add .
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   index.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "Added some files"
+[master 30c7cb6] Added some files
+ 2 files changed, 31 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 index.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add about.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "about.html"
+[master e753288] about.html
+ 1 file changed, 15 insertions(+), 1 deletion(-)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add index.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "index.html"
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git checkout -f
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git log
+commit e7532889a66e77087ab74dbd421c3dba6c633d04 (HEAD -> master)
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 08:08:13 2021 +0530
+
+    about.html
+
+commit 30c7cb685d6b6c87de8f0e91d3f13fdd4085bdf6
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 08:06:30 2021 +0530
+
+    Added some files
+
+commit fbb48c2040e4ac4dbdf6abccde3d4881e43ccffe
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:52:06 2021 +0530
+
+    Add contact
+
+commit b113bf056a63c30ce2c9a513a3349a55d187da1f
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:33:59 2021 +0530
+
+    Few changes
+
+commit 26274a89ed94fb82b443023b9036aa9bd85956b5
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:21:18 2021 +0530
+
+    ABCD folder
+
+commit a74bff68a5abf96dcdbaf9b53baad8581dd935d7
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add .
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   contact.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "Modified Contact"
+[master d8d599d] Modified Contact
+ 1 file changed, 6 insertions(+)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git config --global alias.st status
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git st
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git lg
+git: 'lg' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git config --global alias.lg log
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git lg
+commit d8d599d3be325a5cf092b1a68f0464a2c5251b56 (HEAD -> master)
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 08:15:02 2021 +0530
+
+    Modified Contact
+
+commit e7532889a66e77087ab74dbd421c3dba6c633d04
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 08:08:13 2021 +0530
+
+    about.html
+
+commit 30c7cb685d6b6c87de8f0e91d3f13fdd4085bdf6
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 08:06:30 2021 +0530
+
+    Added some files
+
+commit fbb48c2040e4ac4dbdf6abccde3d4881e43ccffe
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:52:06 2021 +0530
+
+    Add contact
+
+commit b113bf056a63c30ce2c9a513a3349a55d187da1f
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Tue Jul 20 07:33:59 2021 +0530
+
+    Few changes
+
+commit 26274a89ed94fb82b443023b9036aa9bd85956b5
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git --global alias.unstage 'restore --stage --'
+unknown option: --global
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git config --global alias.unstage 'restore --stage --'
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git st
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add .
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git st
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   contact.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ unstage contact.html
+bash: unstage: command not found
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git unstage contact.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git st
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git diff
+diff --git a/contact.html b/contact.html
+index 9b4bacd..64c972e 100644
+--- a/contact.html
++++ b/contact.html
+@@ -18,7 +18,6 @@
+         <p>Name:</p><input type="text" name="name" id="name" placeholder="Enter your name">
+         <p>Email</p><input type="email" name="email" id="email" placeholder="Enter your email">
+         <input type="submit" value="submit">
+-
+     </form>
+ </body>
+ </html>
+\ No newline at end of file
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add .
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git checkout -f
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$

@@ -1,0 +1,219 @@
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio
+$ pwd
+/c/my-portfolio
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio
+$ ls
+index.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio
+$ git init
+Initialized empty Git repository in C:/my-portfolio/.git/
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git init
+Reinitialized existing Git repository in C:/my-portfolio/.git/
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add index.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "Add index.html"
+[master (root-commit) 513e3e9] Add index.html
+ 1 file changed, 12 insertions(+)
+ create mode 100644 index.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ touch about.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add about.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "Added About Me"
+[master 90cbec4] Added About Me
+ 1 file changed, 15 insertions(+)
+ create mode 100644 about.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add index.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "Added subheading in index.html"
+[master 809beb0] Added subheading in index.html
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add about.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git add about.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "changed about.html"
+[master 85b90d5] changed about.html
+ 1 file changed, 13 insertions(+)
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git log
+commit 85b90d5b4538e5abaeaf803ba3286fe8b33952fe (HEAD -> master)
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Mon Jul 19 09:39:35 2021 +0530
+
+    changed about.html
+
+commit 809beb053bd07fbde40368b5f1b2e54372e86adc
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Mon Jul 19 09:32:23 2021 +0530
+
+    Added subheading in index.html
+
+commit 90cbec4b4255e92af4527814cb5a2f4e70798f5e
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Mon Jul 19 09:27:14 2021 +0530
+
+    Added About Me
+
+commit 513e3e9774f8653da7cda75268e2dd54730807ed
+Author: Km Pooja <ajwanp7668@gmail.com>
+Date:   Mon Jul 19 09:10:44 2021 +0530
+
+    Add index.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git log --oneline
+85b90d5 (HEAD -> master) changed about.html
+809beb0 Added subheading in index.html
+90cbec4 Added About Me
+513e3e9 Add index.html
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "changed"
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$ git commit -m "changed"
+On branch master
+nothing to commit, working tree clean
+
+HP@LAPTOP-VO6496IP MINGW64 /c/my-portfolio (master)
+$
